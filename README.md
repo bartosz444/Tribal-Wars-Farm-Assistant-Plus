@@ -7,4 +7,4 @@ A UserScript that augments the Tribal Wars's Loot assistant.
 * Safari: Install Tampermonkey.
 * Firefox: Install Greasemonkey
 * Internet Explorer: Not sure anymore, old plugin is gone.
-* ALL: After installing the plugin, go [URL] to  to install.
+* ALL: After installing the plugin, go https://github.com/thevtm/Tribal-Wars-Farm-Assistant-Plus/raw/master/build/TribalWarsFAP.user.js to  to install.
