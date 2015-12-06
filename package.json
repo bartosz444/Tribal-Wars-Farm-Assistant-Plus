@@ -1,0 +1,47 @@
+{
+  "name": "Tribal-Wars-Farm-Assistant-Plus",
+  "version": "0.1.0",
+  "description": "One click farm helper for Tribal Wars.",
+  "scripts": {
+    "gulp": "gulp",
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "author": {
+    "name": "TheVTM"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.2.0",
+    "babelify": "^6.4.0",
+    "brfs": "^1.4.1",
+    "browserify": "^11.2.0",
+    "browserify-shim": "^3.8.10",
+    "gulp": "^3.9.0",
+    "gulp-header": "^1.7.1",
+    "gulp-if": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.7",
+    "javascript-state-machine": "^2.3.5",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1",
+    "loglevel": "^1.4.0",
+    "string-format": "^0.5.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  },
+  "browserify": {
+    "transform": [
+      "brfs",
+      "browserify-shim",
+      "babelify"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$",
+    "fs": "fs",
+    "lodash": "global:_"
+  }
+}

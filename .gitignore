@@ -1,0 +1,7 @@
+# NODE
+node_modules
+
+# VSCODE
+.vscode
+typings
+build_prod.ps1
