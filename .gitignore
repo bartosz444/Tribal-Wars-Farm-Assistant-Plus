@@ -5,3 +5,6 @@ node_modules
 .vscode
 typings
 build_prod.ps1
+
+# Tern
+.tern-project
