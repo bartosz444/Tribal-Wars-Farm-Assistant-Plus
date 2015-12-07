@@ -1,7 +1,12 @@
 # Tribal Wars Farm Assistant Plus
 A UserScript that augments the Tribal Wars's Loot assistant.
 
-# Install
+## Porpouse
+Add an extra option to the Farm Assist that performs the farming automatically.
+
+![](https://cloud.githubusercontent.com/assets/978715/11634163/1dfbf788-9cf6-11e5-8b02-767429c5c969.PNG)
+
+## Install
 
 * Chrome: Install Tampermonkey.
 * Safari: Install Tampermonkey.
