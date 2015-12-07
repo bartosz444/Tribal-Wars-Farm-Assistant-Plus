@@ -34,31 +34,35 @@ exports.minePlunderVillages = function () {
   // Get villages data
   $("#plunder_list [id*=village_]")
     .each( (index, element) => {
-      
-      let je = $(element);
-      
-      let tr_id = je.attr("id");
-      let id = _.parseInt(_.first(/\d+/.exec(tr_id)));
-      let report_id = _.parseInt(_.last(/view=(\d+)/.exec(je.find("a[href*=report]").attr("href"))));
-      let coordinates =  Miner.parseCoordinates(je.find("a[href*=report]").text());
-      let is_attacking = !_.isEmpty(je.find("img[src*=attack]"));
-      let res = Miner.parseResource(je.find("td:nth-child(6)").text());
-      let wall = _.parseInt(je.find("td:nth-child(7)").text());
-      let distance = parseFloat(je.find("td:nth-child(8)").text());
-      
-      // Template C
-      let template_c_a = je.find("a[data-units-forecast]");
-      let template_c = {};
-      if(!template_c_a.hasClass("farm_icon_disabled")) {
-        template_c = JSON.parse(template_c_a.attr("data-units-forecast"));
-      }
-      
-      // Create object
-      let pv = new PlunderableVillage(id, report_id, coordinates, is_attacking, res, wall, distance, template_c);
-      
-      log.trace("Mined village", pv);
-      
-      plunderable_villages.push(pv);    
+      try {
+        let je = $(element);
+        
+        let tr_id = je.attr("id");
+        let id = _.parseInt(_.first(/\d+/.exec(tr_id)));
+        let report_id = _.parseInt(_.last(/view=(\d+)/.exec(je.find("a[href*=report]").attr("href"))));
+        let coordinates =  Miner.parseCoordinates(je.find("a[href*=report]").text());
+        let is_attacking = !_.isEmpty(je.find("img[src*=attack]"));
+        let res = Miner.parseResource(je.find("td:nth-child(6)").text());
+        let wall = _.parseInt(je.find("td:nth-child(7)").text());
+        let distance = parseFloat(je.find("td:nth-child(8)").text());
+        
+        // Template C
+        let template_c_a = je.find("a[data-units-forecast]");
+        let template_c = {};
+        if(!template_c_a.hasClass("farm_icon_disabled")) {
+          template_c = JSON.parse(template_c_a.attr("data-units-forecast"));
+        }
+        
+        // Create object
+        let pv = new PlunderableVillage(id, report_id, coordinates, is_attacking, res, wall, distance, template_c);
+        
+        log.trace("Mined village", pv);
+        
+        plunderable_villages.push(pv);
+        
+      } catch (err) {
+        log.warn("Unable to mine plunderable village", element, err);
+      }    
     }
   );
   
