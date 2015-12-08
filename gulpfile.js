@@ -33,7 +33,7 @@ gulp.task('js', () => {
     .pipe(source(outFileName)) // Define nome do arquivo de saida.
     .pipe(buffer()) // Transforma stream em buffer, requerido para uglify/header.
     .pipe(gulpif(env === 'prod', uglify())) // Executa uglify apenas se for para produção.
-    .pipe(header(fs.readFileSync('./src/js/header.js', 'utf8'))) // Adiciona header do UserScript.
+    .pipe(header(fs.readFileSync('./src/js/header.js', 'utf8') + "\n")) // Adiciona header do UserScript.
     .pipe(gulp.dest(DEST_PATH));
 });
 
