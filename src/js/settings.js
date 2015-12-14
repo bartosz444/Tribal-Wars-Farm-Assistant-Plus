@@ -7,7 +7,7 @@ let constants = require('./const');
 // Consts
 const SETTINGS_STORAGE_NAME = "Settings";
 
-let Settings = _.defaultsDeep(Storage.get(SETTINGS_STORAGE_NAME, {}), constants.DEFAULT_SETTINGS);
+let Settings = Storage.get(SETTINGS_STORAGE_NAME) || constants.DEFAULT_SETTINGS;
 
 Object.observe(Settings,
   function (changes) {
