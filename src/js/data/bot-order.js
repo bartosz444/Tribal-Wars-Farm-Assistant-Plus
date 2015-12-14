@@ -100,7 +100,7 @@ class CustomOrder extends Order {
   execute () {
     if(!this.hasEnoughUnits()) {
       log.trace("TemplateOrder not enough units", this);
-      return;
+      return false;
     } 
     
     let pv = this.plunderable_village;
@@ -137,6 +137,8 @@ class CustomOrder extends Order {
         );
       }
     );
+    
+    return true;
   }
   
   simulate () {
