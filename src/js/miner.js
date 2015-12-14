@@ -47,7 +47,7 @@ exports.minePlunderVillages = function () {
         let distance = parseFloat(je.find("td:nth-child(8)").text());
         
         // Template C
-        let template_c_a = je.find("a[data-units-forecast]");
+        let template_c_a = je.find(".farm_icon_c");
         let template_c = {};
         if(!template_c_a.hasClass("farm_icon_disabled")) {
           template_c = JSON.parse(template_c_a.attr("data-units-forecast"));
