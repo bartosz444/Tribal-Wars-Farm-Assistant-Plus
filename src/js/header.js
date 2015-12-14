@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW Farm Assistant Plus
 // @namespace     https://github.com/sindresorhus/cssprettifier-userscript
-// @version       0.9
+// @version       0.9.1
 // @description   One click farm helper for Tribal Wars.
 // @author        TheVTM
 // @require       https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js
